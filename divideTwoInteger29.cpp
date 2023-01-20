@@ -3,37 +3,26 @@ public:
     int divide(int dividend, int divisor) {
         int count=0;
         int num=0;
-        if(divisor>0 && dividend>0)
-        {
-            while(divisor+num<=dividend)
+        if(dividend==INT_MIN && divisor==1)
+            return INT_MIN;
+        if(dividend==INT_MIN && divisor==-1)
+            return INT_MAX;
+        
+        long int dvd= abs(dividend);
+        long int div= abs(divisor);
+        while(div+num<=dvd)
             {
                 count++;
-                num=divisor+num;
+                num=div+num;
             }
-        }
-        else if(divisor<0 && dividend<0)
+        
+        if((dividend>0 && divisor>0) || (dividend<0 && divisor<0))
         {
-            divisor= divisor-divisor-divisor;
-            dividend=dividend-dividend-dividend;
-            while(divisor+num<=dividend)
-            {
-                count++;
-                num=divisor+num;
-            }
+            return count;
         }
         else
         {
-            if(divisor<0){
-            divisor= divisor-divisor-divisor;}
-            else{
-            dividend=dividend-dividend-dividend;}
-            while(divisor+num<=dividend)
-            {
-                count--;
-                num=divisor+num;
-            }
-
+            return -count;
         }
-        return count;
     }
 };
