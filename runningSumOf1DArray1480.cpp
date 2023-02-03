@@ -4,16 +4,15 @@ Given an array nums. We define a running sum of an array as runningSum[i] = sum(
 Return the running sum of nums.
 
 */
-
 class Solution {
-    public int[] runningSum(int[] nums) {
-        // int size= sizeof(nums)/sizeof(nums[0]);
+public:
+    vector<int> runningSum(vector<int>& nums) {
         int prev=0;
-        for(int i=0; i<nums.length; i++)
+        for(int i=0; i<size(nums); i++)
         {
             nums[i]= nums[i]+ prev;
             prev= nums[i];
         }
         return nums;
     }
-}
+};
