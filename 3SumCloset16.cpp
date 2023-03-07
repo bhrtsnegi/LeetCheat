@@ -3,7 +3,7 @@ Given an integer array nums of length n and an integer target, find three intege
 
 Return the sum of the three integers.
 
-You may assume that each input would have exactly one solution.
+You may assume that each input would have exactly one solution
 */
 
 class Solution {
