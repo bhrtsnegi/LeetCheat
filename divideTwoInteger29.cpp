@@ -1,4 +1,4 @@
-// Question need to be updated here
+// Question need to be updated here soon
 class Solution {
 public:
     int divide(int dividend, int divisor) {
