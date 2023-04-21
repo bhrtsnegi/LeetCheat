@@ -6,19 +6,24 @@ Increment the large integer by one and return the resulting array of digits.
 
 class Solution {
 public:
-    vector<int> plusOne(vector<int>& digits) {
-        vector<int> result;
-        int num=0;
-        for(int i=0; i<digits.size(); i++)
+    vector<int> plusOne(vector<int>& digits){
+        for(int i=digits.size()-1; i>=0; i--)
         {
-            num=num*pow(10,i)+ digits[i];
+            if(digits[i]==9)
+            {
+                digits[i]=0;
+                if(i==0)
+                {
+                    digits[i]=1;
+                    digits.push_back(0);
+                }
+            }
+            else
+            {
+                digits[i]+=1;
+                break;
+            }
         }
-        num=num+1;
-        int i=0;
-        while(num!=0)
-        {
-            result.push_back(num%10);
-        }
-        return result;
+        return digits;
     }
 };
