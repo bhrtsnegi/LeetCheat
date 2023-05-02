@@ -13,25 +13,19 @@ Return signFunc(product).
 
 class Solution {
 public:
-
     int arraySign(vector<int>& nums) {
-        int prod=1;
+        int count=0;
         for(int i=0; i<nums.size(); i++)
         {
-            prod*=nums[i];
-            if(prod<0)
-            {
-                prod=-1;
-            }
-            else if(prod>0)
-            {
-                prod=1;
-            }
-            else
-            {
-                prod=0;
-            }
+            if(nums[i]==0)
+                return 0;
+            if(nums[i]<0)
+                count++;
         }
-        return prod;
+        if(count%2==1)
+            return -1;
+        else
+            return 1;
+        return 0;
     }
 };
