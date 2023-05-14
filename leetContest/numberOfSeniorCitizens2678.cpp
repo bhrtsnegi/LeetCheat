@@ -7,3 +7,16 @@ The following two characters are used to indicate the age of the person.
 The last two characters determine the seat allotted to that person.
 Return the number of passengers who are strictly more than 60 years old.
 */
+
+class Solution {
+public:
+    int countSeniors(vector<string>& details) {
+        int count=0;
+        for(auto str:details)
+        {
+            if(str.substr(11,2)>"60")
+                count++;
+        }
+        return count;
+    }
+};
