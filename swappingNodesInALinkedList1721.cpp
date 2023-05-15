@@ -13,6 +13,8 @@ Return the head of the linked list after swapping the values of the kth node fro
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+// METHOD 1:
 class Solution {
 public:
     ListNode* swapNodes(ListNode* head, int k) {
@@ -31,6 +33,27 @@ public:
 
         y=ptr->val;
         ptr->val=x;
+        
+        //METHOD 2:
+        class Solution {
+public:
+    ListNode* swapNodes(ListNode* head, int k) {
+        ListNode* ptr= head;
+        ListNode* rightHead=head;
+        ListNode* leftHead= head;
+        int count=1;
+        while(ptr!=NULL)
+        {
+            if(count<k)    leftHead=leftHead->next;
+            if(count>k)     rightHead=rightHead->next;
+
+            count++;
+            ptr=ptr->next;
+        }
+        swap(leftHead->val,rightHead->val);
+        return head;
+    }
+};
         ptr=head;
         for(int i=1; i<k; i++)
         ptr=ptr->next;
