@@ -30,12 +30,10 @@ Write an SQL query to get the names of products that have at least 100 units ord
 
 Return result table in any order.
 */
-
-select * from 
-(select p.product_name, sum(o.unit)as unit
+select p.product_name, sum(o.unit)as unit
 from products p
 left join orders o
 using (product_id)
 where month(order_date)=2
-group by product_id) as mytable
-where unit>=100
+group by product_id
+having unit>=100;
