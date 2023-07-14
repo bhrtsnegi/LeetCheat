@@ -7,23 +7,9 @@ You must write an algorithm with O(log n) runtime complexity.
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-        int lb=0, ub=nums.size()-1, mid, val=0;
-        while(lb<=ub)
-        {
-            mid=(lb+ub)/2;
-            if(nums[mid]==target)
-                return mid;
-            else if(nums[mid]<target)
-            {
-                val=mid+1;
-                lb=mid+1;
-            }
-            else
-            {
-                val=mid;
-                ub=mid-1;
-            }
-        }
-        return val;
+        for(int i=nums.size()-1;i>=0;i--)
+            if(nums[i]<target)
+                return i+1;
+        return 0;
     }
 };
