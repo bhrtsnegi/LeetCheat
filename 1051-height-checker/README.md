@@ -5,7 +5,7 @@
 <p>Return <em>the <strong>number of indices</strong> where </em><code>heights[i] != expected[i]</code>.</p>
 
 <p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+<p><strong class="example">Example One:</strong></p>
 
 <pre>
 <strong>Input:</strong> heights = [1,1,4,2,1,3]
