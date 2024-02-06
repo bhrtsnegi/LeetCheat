@@ -1,5 +1,5 @@
 
-# Leetcode Coding Problems with numbers and my personal Solutions
+# Leetcode Coding Problems with numbers and my personal Solutions.
 
 All solutions with question numbers which I solved in leetcode to refer in future and to save my progress report here. My codes and concepts became better with time and I am able to adapt algorithms to solve problems in better space and time complexity.
 
